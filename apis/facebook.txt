@@ -1,0 +1,236 @@
+GET     /v2.2/{achievement-id}
+GET     /v2.2/{achievement-type-id}
+
+GET     /v2.2/{album-id}
+GET     /v2.2/{album-id}/picture
+GET     /v2.2/{album-id}/photos
+POST    /v2.2/{album-id}/photos
+
+GET     /v2.2/{app-id}
+GET     /v2.2/{app-id}/app_link_hosts
+POST    /v2.2/{app-id}/app_link_hosts
+GET     /v2.2/{app-id}/app_insights
+GET     /v2.2/{app-id}/accounts/test-users
+POST    /v2.2/{app-id}/accounts/test-users
+DELETE  /v2.2/{app-id}/accounts/test-users
+GET     /v2.2/{app-id}/accounts/achievements
+POST    /v2.2/{app-id}/accounts/achievements
+DELETE  /v2.2/{app-id}/accounts/achievements
+GET     /v2.2/{app-id}/accounts/banned
+POST    /v2.2/{app-id}/accounts/banned
+DELETE  /v2.2/{app-id}/accounts/banned
+GET     /v2.2/{app-id}/accounts/groups
+POST    /v2.2/{app-id}/accounts/groups
+DELETE  /v2.2/{app-id}/accounts/groups
+GET     /v2.2/{app-id}/accounts/picture
+GET     /v2.2/{app-id}/accounts/roles
+POST    /v2.2/{app-id}/accounts/roles
+DELETE  /v2.2/{app-id}/accounts/roles
+GET     /v2.2/{app-id}/accounts/scores
+DELETE  /v2.2/{app-id}/accounts/scores
+GET     /v2.2/{app-id}/accounts/staticresources
+GET     /v2.2/{app-id}/accounts/subscriptions
+POST    /v2.2/{app-id}/accounts/subscriptions
+DELETE  /v2.2/{app-id}/accounts/subscriptions
+GET     /v2.2/{app-id}/accounts/translations
+POST    /v2.2/{app-id}/accounts/translations
+DELETE  /v2.2/{app-id}/accounts/translations
+
+GET     /v2.2/{app-link-host-id}
+DELETE  /v2.2/{app-link-host-id}
+
+GET     /v2.2/{comment-id}
+DELETE  /v2.2/{comment-id}
+POST    /v2.2/{comment-id}
+
+GET     /v2.2/debug_token
+
+GET     /v2.2/{domain-id}
+
+GET     /v2.2/{event-id}
+DELETE  /v2.2/{event-id}
+POST    /v2.2/{event-id}
+GET     /v2.2/{event-id}/attending
+POST    /v2.2/{event-id}/attending
+GET     /v2.2/{event-id}/declined
+POST    /v2.2/{event-id}/declined
+GET     /v2.2/{event-id}/feed
+POST    /v2.2/{event-id}/feed
+GET     /v2.2/{event-id}/invited
+POST    /v2.2/{event-id}/invited
+GET     /v2.2/{event-id}/maybe
+POST    /v2.2/{event-id}/maybe
+GET     /v2.2/{event-id}/noreply
+GET     /v2.2/{event-id}/picture
+GET     /v2.2/{event-id}/photos
+POST    /v2.2/{event-id}/photos
+POST    /v2.2/{event-id}/videos
+
+GET     /v2.2/{friendlist-id}
+DELETE  /v2.2/{friendlist-id}
+GET     /v2.2/{friendlist-id}/members
+DELETE  /v2.2/{friendlist-id}/members
+
+GET     /v2.2/{group-id}
+POST    /v2.2/{group-id}
+POST    /v2.2/{group-id}/admins
+DELETE  /v2.2/{group-id}/admins
+GET     /v2.2/{group-id}/docs
+GET     /v2.2/{group-id}/events
+GET     /v2.2/{group-id}/feed
+POST    /v2.2/{group-id}/feed
+GET     /v2.2/{group-id}/files
+GET     /v2.2/{group-id}/members
+POST    /v2.2/{group-id}/members
+DELETE  /v2.2/{group-id}/members
+
+GET     /v2.2/{link-id}
+DELETE  /v2.2/{link-id}
+
+GET     /v2.2/{message-id}
+GET     /v2.2/{message-id}/attachments
+GET     /v2.2/{message-id}/shares
+
+GET     /v2.2/{milestone-id}
+DELETE  /v2.2/{milestone-id}
+POST    /v2.2/{milestone-id}
+GET     /v2.2/{milestone-id}/photos
+POST    /v2.2/{milestone-id}/photos
+
+GET     /v2.2/{offer-id}
+
+GET     /v2.2/{page-id}
+POST    /v2.2/{page-id}
+GET     /v2.2/{page-id}/admins
+GET     /v2.2/{page-id}/albums
+POST    /v2.2/{page-id}/albums
+GET     /v2.2/{page-id}/blocked
+POST    /v2.2/{page-id}/blocked
+DELETE  /v2.2/{page-id}/blocked
+GET     /v2.2/{page-id}/conversations
+GET     /v2.2/{page-id}/events
+GET     /v2.2/{page-id}/feed
+GET     /v2.2/{page-id}/feed
+GET     /v2.2/{page-id}/feed
+POST    /v2.2/{page-id}/feed
+GET     /v2.2/{page-id}/global_brand_children
+GET     /v2.2/{page-id}/links
+GET     /v2.2/{page-id}/locations
+POST    /v2.2/{page-id}/locations
+DELETE  /v2.2/{page-id}/locations
+GET     /v2.2/{page-id}/milestones
+POST    /v2.2/{page-id}/milestones
+GET     /v2.2/{page-id}/offers
+POST    /v2.2/{page-id}/offers
+GET     /v2.2/{page-id}/picture
+POST    /v2.2/{page-id}/picture
+GET     /v2.2/{page-id}/photos
+POST    /v2.2/{page-id}/photos
+GET     /v2.2/{page-id}/photos/uploaded
+GET     /v2.2/{page-id}/posts
+GET     /v2.2/{page-id}/promotable_posts
+GET     /v2.2/{page-id}/settings
+POST    /v2.2/{page-id}/settings
+GET     /v2.2/{page-id}/statuses
+GET     /v2.2/{page-id}/tabs
+GET     /v2.2/{page-id}/videos
+GET     /v2.2/{page-id}/videos/uploaded
+POST    /v2.2/{page-id}/videos
+GET     /v2.2/{page-id}/tagged
+
+GET     /v2.2/{payment-id}
+POST    /v2.2/{payment-id}/dispute
+POST    /v2.2/{payment-id}/refunds
+
+GET     /v2.2/{photo-id}
+POST    /v2.2/{photo-id}
+GET     /v2.2/{photo-id}/tags
+POST    /v2.2/{photo-id}/tags
+
+GET     /v2.2/{place-tag-id}
+
+GET     /v2.2/{post-id}
+DELETE  /v2.2/{post-id}
+
+GET     /v2.2/{review-id}
+
+GET     /v2.2/{status-id}
+DELETE  /v2.2/{status-id}
+
+GET     /v2.2/{test-user-id}
+POST    /v2.2/{test-user-id}
+DELETE  /v2.2/{test-user-id}
+GET     /v2.2/{test-user-id}/friends
+POST    /v2.2/{test-user-id}/friends
+
+GET     /v2.2/{thread-id}
+
+GET     /v2.2/{user-id}
+POST    /v2.2/{user-id}
+GET     /v2.2/{user-id}/accounts
+GET     /v2.2/{user-id}/achievements
+POST    /v2.2/{user-id}/achievements
+DELETE  /v2.2/{user-id}/achievements
+GET     /v2.2/{user-id}/activities
+GET     /v2.2/{user-id}/albums
+POST    /v2.2/{user-id}/albums
+GET     /v2.2/{user-id}/applications/developer
+GET     /v2.2/{user-id}/apprequests
+POST    /v2.2/{user-id}/apprequests
+GET     /v2.2/{user-id}/books
+GET     /v2.2/{user-id}/events
+GET     /v2.2/{user-id}/events/attending
+GET     /v2.2/{user-id}/events/created
+GET     /v2.2/{user-id}/events/maybe
+GET     /v2.2/{user-id}/events/not_replied
+GET     /v2.2/{user-id}/events/declined
+GET     /v2.2/{user-id}/family
+GET     /v2.2/{user-id}/feed
+POST    /v2.2/{user-id}/feed
+GET     /v2.2/{user-id}/friendlists
+GET     /v2.2/{user-id}/friends
+GET     /v2.2/{user-id}/games
+GET     /v2.2/{user-id}/groups
+GET     /v2.2/{user-id}/home
+GET     /v2.2/{user-id}/ids_for_businesses
+GET     /v2.2/{user-id}/inbox
+GET     /v2.2/{user-id}/interests
+GET     /v2.2/{user-id}/invitable_friends
+GET     /v2.2/{user-id}/likes
+GET     /v2.2/{user-id}/links
+GET     /v2.2/{user-id}/movies
+GET     /v2.2/{user-id}/music
+GET     /v2.2/{user-id}/notifications
+POST    /v2.2/{user-id}/notifications
+GET     /v2.2/{user-id}/outbox
+GET     /v2.2/{user-id}/payment_transactions
+GET     /v2.2/{user-id}/permissions
+DELETE  /v2.2/{user-id}/permissions
+GET     /v2.2/{user-id}/picture
+GET     /v2.2/{user-id}/photos
+GET     /v2.2/{user-id}/photos/uploaded
+POST    /v2.2/{user-id}/photos
+GET     /v2.2/{user-id}/pokes
+GET     /v2.2/{user-id}/posts
+GET     /v2.2/{user-id}/scores
+POST    /v2.2/{user-id}/scores
+DELETE  /v2.2/{user-id}/scores
+GET     /v2.2/{user-id}/statuses
+GET     /v2.2/{user-id}/taggable_friends
+GET     /v2.2/{user-id}/tagged
+GET     /v2.2/{user-id}/tagged_places
+GET     /v2.2/{user-id}/television
+GET     /v2.2/{user-id}/videos
+POST    /v2.2/{user-id}/videos
+GET     /v2.2/{user-id}/videos/uploaded
+
+GET     /v2.2/{video-id}
+
+GET     /v2.2/{object-id}/comments
+POST    /v2.2/{object-id}/comments
+GET     /v2.2/{object-id}/likes
+POST    /v2.2/{object-id}/likes
+DELETE  /v2.2/{object-id}/likes
+GET     /v2.2/{object-id}/sharedposts
+GET     /v2.2/{object-id}/insights
+GET     /v2.2/{object-id}/insights/{metric}
