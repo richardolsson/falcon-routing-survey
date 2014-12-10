@@ -4,6 +4,21 @@ Falcon routing survey
 Survey and benchmarks of different routing strategies for a number of
 real-life API designs. Conducted for the Falcon Python framework.
 
+Background
+----------
+[Falcon](http://falconframework.org/) is a light framework for creating
+RESTful API services, focusing on performance. One important target for
+optimization is the URI routing performed by the framework for every
+request.
+
+Instead of naively benchmarking routing strategies against a fictional
+set of URIs, the work in this repository is aimed towards surveying
+real APIs and performing benchmarks for different routing strategies on
+the URI schemes of those actual, live APIs.
+
+The goal is to find the strategy which performs best under "real life
+conditions" and to then go ahead and implement that in Falcon.
+
 Surveyed APIs
 -------------
 The following APIs have (or will be) surveyed to create a catalog of 
@@ -20,7 +35,7 @@ endpoint lists are available in the _apis_ folder.
 
 Routing strategies
 ------------------
-The code contains standa-lone implementations of two different routing
+The code contains stand-alone implementations of two different routing
 strategies.
 
 The `RegexRouter` is an implementation of the same regex-based strategy
