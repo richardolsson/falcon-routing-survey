@@ -13,6 +13,7 @@ endpoint lists are available in the _apis_ folder.
 * Facebook
 * Twitter
 * GitHub
+* MailGun
 * (more coming...)
 
 Routing strategies
