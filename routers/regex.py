@@ -17,7 +17,7 @@ class RegexRouter(object):
             if len(seg) and seg[0] == '{' and seg[-1] == '}':
                 seg_name = seg[1:-1]
                 seg_name = seg_name.replace('-', '_')
-                seg = '(?P<%s>[-_a-zA-Z0-9]*)' % seg_name
+                seg = '(?P<%s>[^/]*)' % seg_name
 
             re_segments.append(seg)
 
