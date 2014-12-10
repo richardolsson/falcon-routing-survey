@@ -34,6 +34,7 @@ endpoint lists are available in the _apis_ folder.
 * Nexmo (two variants, see comments in .txt files)
 * Spotify
 * PayPal
+* Stripe
 * (more coming...)
 
 Routing strategies
