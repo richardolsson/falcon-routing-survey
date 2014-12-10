@@ -3,23 +3,19 @@ import tree
 class CompiledTreeRouter(tree.TreeRouter):
     def __init__(self):
         super(CompiledTreeRouter, self).__init__()
-        self._code = None
+        self._find = None
         self._code_lines = None
         self._responders = []
 
     def find_responder(self, pattern):
-        if self._code is None:
+        if self._find is None:
             self._compile()
 
         path = pattern.split('/')
         if path[0]=='':
             path = path[1:]
 
-        responders = self._responders
-        responder = None
-
-        exec(self._code)
-        return responder
+        return self._find(path, self._responders)
 
     def _compile_node(self, node=None, level=0):
         pad = '  ' + level * '  '
@@ -54,10 +50,10 @@ class CompiledTreeRouter(tree.TreeRouter):
         for root in self._roots:
             self._compile_node(root)
 
-        self._code_lines.append('responder = find(path, responders)')
-
         src = '\n'.join(self._code_lines)
 
         print(src)
-        self._code = compile(src, '<string>', 'exec')
+        ns = {}
+        exec compile(src, '<string>', 'exec') in ns
+        self._find = ns['find']
 
