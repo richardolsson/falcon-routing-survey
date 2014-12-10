@@ -33,6 +33,7 @@ endpoint lists are available in the _apis_ folder.
 * Twilio
 * Nexmo (two variants, see comments in .txt files)
 * Spotify
+* PayPal
 * (more coming...)
 
 Routing strategies
