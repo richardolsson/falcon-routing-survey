@@ -84,19 +84,26 @@ time the look-up for all available routers.
 Running the example above outputs something along these lines (ignoring
 the initial debugging information):
 ```
------------
+----------------------------------------
 BENCHMARKING ROUTER: tree_router
 > from __main__ import tree_router
 > tree_router.find_responder("/repos/racker/falcon/issues/114/labels")
-RESULT: 3.87302017212s (200000 iterations)
+RESULT: 3.99470496178s (200000 iterations)
 RETURN: Resource(/repos/{owner}/{repo}/issues/{number}/labels)
------------
+----------------------------------------
 BENCHMARKING ROUTER: regex_router
 > from __main__ import regex_router
 > regex_router.find_responder("/repos/racker/falcon/issues/114/labels")
-RESULT: 8.60835313797s (200000 iterations)
+RESULT: 8.51333618164s (200000 iterations)
+RETURN: Resource(/repos/{owner}/{repo}/issues/{number}/labels)
+----------------------------------------
+BENCHMARKING ROUTER: compiled_router
+> from __main__ import compiled_router
+> compiled_router.find_responder("/repos/racker/falcon/issues/114/labels")
+RESULT: 0.957674980164s (200000 iterations)
 RETURN: Resource(/repos/{owner}/{repo}/issues/{number}/labels)
 ``` 
 
 In this case, the tree router is roughly 2.2 times faster than the mock
-implementation of the current Falcon regex router.
+implementation of the current Falcon regex router, and the Python code
+generator router is another 4 times faster still.
