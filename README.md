@@ -32,6 +32,7 @@ endpoint lists are available in the _apis_ folder.
 * Mandrill
 * Twilio
 * Nexmo (two variants, see comments in .txt files)
+* Spotify
 * (more coming...)
 
 Routing strategies
