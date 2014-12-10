@@ -4,7 +4,7 @@ import re
 import sys
 import timeit
 
-from routers import TreeRouter, RegexRouter
+from routers import TreeRouter, RegexRouter, CompiledTreeRouter
 
 
 def res_factory(url, methods):
@@ -39,6 +39,7 @@ def measure_router(router_name, url, n=100000):
     imp_stmt = 'from __main__ import %s' % router_name
     run_stmt = '%s.find_responder("%s")' % (router_name, url)
 
+    print('----------------------------------------')
     print('BENCHMARKING ROUTER: %s' % router_name)
     print('> %s' % imp_stmt)
     print('> %s' % run_stmt)
@@ -51,6 +52,7 @@ def measure_router(router_name, url, n=100000):
 def main():
     global tree_router
     global regex_router
+    global compiled_router
 
     if len(sys.argv) < 3:
         print('Usage: %s <api.txt> <url_to_find> [num_iterations]\n' %
@@ -92,19 +94,20 @@ def main():
 
         tree_router = setup_router(endpoint_methods, TreeRouter)
         regex_router = setup_router(endpoint_methods, RegexRouter)
+        compiled_router = setup_router(endpoint_methods, CompiledTreeRouter)
+        compiled_router._compile()
 
         for root in tree_router._roots:
             root.print_debug()
 
-        print('-----------')
-
         measure_router('tree_router', url_to_find, n=iterations)
         print('RETURN: %s' % tree_router.find_responder(url_to_find))
 
-        print('-----------')
-
         measure_router('regex_router', url_to_find, n=iterations)
         print('RETURN: %s' % regex_router.find_responder(url_to_find))
+
+        measure_router('compiled_router', url_to_find, n=iterations)
+        print('RETURN: %s' % compiled_router.find_responder(url_to_find))
 
 
 if __name__ == '__main__':
