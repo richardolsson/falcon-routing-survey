@@ -49,6 +49,12 @@ O(n) regular expression based router. `TreeRouter` constructs a tree
 representing the added routes at add time. Look-up is then performed
 by splitting the URL and traversing the tree recursively.
 
+The `CompiledTreeRouter` extends the `TreeRouter` but only uses the 
+tree structure, while completely replacing the look-up code. Instead,
+the `CompiledTreeRouter` generates Python code representing the route
+tree completely inlined, compiles it and then executes it to find the
+correct responder.
+
 Usage
 -----
 Use the `benchmark.py` script to benchmark URL look-ups against the 
