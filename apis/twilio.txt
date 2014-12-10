@@ -1,0 +1,134 @@
+POST    /2010-04-01/Accounts/{AccountSid}/Calls
+GET     /2010-04-01/Accounts/{AccountSid}/Calls
+GET     /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}
+POST    /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}
+
+GET     /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{OutgoingCallerIdSid}
+POST    /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{OutgoingCallerIdSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{OutgoingCallerIdSid}
+GET     /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds
+POST    /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds
+
+GET     /2010-04-01/Accounts/{AccountSid}/Transcriptions/{TranscriptionSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/Transcriptions/{TranscriptionSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Transcriptions
+GET     /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions
+
+GET     /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/Recordings/{RecordingSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Recordings
+GET     /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings
+
+GET     /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Conferences
+GET     /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}
+POST    /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants
+
+GET     /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}
+POST    /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Queues
+POST    /2010-04-01/Accounts/{AccountSid}/Queues
+
+GET     /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}
+POST    /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/Front
+POST    /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/Front
+GET     /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members
+
+POST    /2010-04-01/Accounts/{AccountSid}/Messages
+GET     /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{ShortCodeSid}
+POST    /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{ShortCodeSid}
+GET     /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes
+
+GET     /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local
+GET     /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/TollFree
+GET     /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Mobile
+GET     /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers
+
+GET     /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}
+POST    /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}
+PUT     /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}
+
+GET     /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers
+POST    /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers
+GET     /2010-04-01/Accounts/{YourAccountSid}/IncomingPhoneNumbers/Local
+POST    /2010-04-01/Accounts/{YourAccountSid}/IncomingPhoneNumbers/Local
+GET     /2010-04-01/Accounts/{YourAccountSid}/IncomingPhoneNumbers/TollFree
+POST    /2010-04-01/Accounts/{YourAccountSid}/IncomingPhoneNumbers/TollFree
+GET     /2010-04-01/Accounts/{YourAccountSid}/IncomingPhoneNumbers/Mobile
+POST    /2010-04-01/Accounts/{YourAccountSid}/IncomingPhoneNumbers/Mobile
+
+GET     /2010-04-01/Accounts/{AccountSid}/Addresses/{AddressSid}
+POST    /2010-04-01/Accounts/{AccountSid}/Addresses/{AddressSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/Addresses/{AddressSid}
+
+GET     /2010-04-01/Accounts/{AccountSid}/Addresses
+POST    /2010-04-01/Accounts/{AccountSid}/Addresses
+GET     /2010-04-01/Accounts/{AccountSid}/Addresses/{AddressSid}/DependentPhoneNumbers
+
+GET     /2010-04-01/Accounts/{AccountSid}/Usage/Records
+GET     /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{UsageTriggerSid}
+POST    /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{UsageTriggerSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Usage/Triggers
+POST    /2010-04-01/Accounts/{AccountSid}/Usage/Triggers
+
+GET     /2010-04-01/Accounts/{AccountSid}
+POST    /2010-04-01/Accounts/{AccountSid}
+PUT     /2010-04-01/Accounts/{AccountSid}
+GET     /2010-04-01/Accounts
+POST    /2010-04-01/Accounts
+
+GET     /2010-04-01/Accounts/{AccountSid}/Applications/{ApplicationSid}
+POST    /2010-04-01/Accounts/{AccountSid}/Applications/{ApplicationSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/Applications/{ApplicationSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Applications
+POST    /2010-04-01/Accounts/{AccountSid}/Applications
+GET     /2010-04-01/Accounts/{AccountSid}/ConnectApps/{ConnectAppSid}
+POST    /2010-04-01/Accounts/{AccountSid}/ConnectApps/{ConnectAppSid}
+GET     /2010-04-01/Accounts/{AccountSid}/ConnectApps
+GET     /2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}
+GET     /2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps
+
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/Domains
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/Domains
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings
+DELETE  /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/IpAccessControlListMappings
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings
+DELETE  /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{IpAddressSid}
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{IpAddressSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{IpAddressSid}
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials
+GET     /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials/{CredentialSid}
+POST    /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials/{CredentialSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials/{CredentialSid}
+
+GET     /2010-04-01/Accounts/{AccountSid}/Notifications/{NotificationSid}
+DELETE  /2010-04-01/Accounts/{AccountSid}/Notifications/{NotificationSid}
+GET     /2010-04-01/Accounts/{AccountSid}/Notifications
+GET     /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications
+
+GET     /2010-04-01/Accounts/{YourAccountSid}/Sandbox
+POST    /2010-04-01/Accounts/{YourAccountSid}/Sandbox

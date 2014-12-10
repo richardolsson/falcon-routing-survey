@@ -15,6 +15,7 @@ endpoint lists are available in the _apis_ folder.
 * GitHub
 * MailGun
 * Mandrill
+* Twilio
 * (more coming...)
 
 Routing strategies
