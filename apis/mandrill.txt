@@ -1,0 +1,103 @@
+POST    /users/info.json
+POST    /users/ping.json
+POST    /users/ping2.json
+POST    /users/senders.json
+
+POST    /messages/send.json
+POST    /messages/send-template.json
+POST    /messages/search.json
+POST    /messages/search-time-series.json
+POST    /messages/info.json
+POST    /messages/content.json
+POST    /messages/parse.json
+POST    /messages/send-raw.json
+POST    /messages/list-scheduled.json
+POST    /messages/cancel-scheduled.json
+POST    /messages/reschedule
+
+POST    /tags/list.json
+POST    /tags/delete.json
+POST    /tags/info.json
+POST    /tags/time-series.json
+POST    /tags/all-time-series.json
+
+POST    /rejects/add.json
+POST    /rejects/list.json
+POST    /rejects/delete.json
+
+POST    /whitelists/add.json
+POST    /whitelists/list.json
+POST    /whitelists/delete.json
+
+POST    /senders/list.json
+POST    /senders/domains.json
+POST    /senders/add-domain.json
+POST    /senders/check-domain.json
+POST    /senders/verify-domain.json
+POST    /senders/info.json
+POST    /senders/time-series.json
+
+POST    /urls/list.json
+POST    /urls/search.json
+POST    /urls/time-series.json
+POST    /urls/tracking-domains.json
+POST    /urls/add-tracking-domain.json
+POST    /urls/check-tracking-domain.json
+
+POST    /templates/add.json
+POST    /templates/info.json
+POST    /templates/update.json
+POST    /templates/publish.json
+POST    /templates/delete.json
+POST    /templates/list.json
+POST    /templates/time-series.json
+POST    /templates/render.json
+
+POST    /webhooks/list.json
+POST    /webhooks/add.json
+POST    /webhooks/info.json
+POST    /webhooks/update.json
+POST    /webhooks/delete.json
+
+POST    /subaccounts/list.json
+POST    /subaccounts/add.json
+POST    /subaccounts/info.json
+POST    /subaccounts/update.json
+POST    /subaccounts/delete.json
+POST    /subaccounts/pause.json
+POST    /subaccounts/resume.json
+
+POST    /inbound/domains.json
+POST    /inbound/add-domain.json
+POST    /inbound/check-domain.json
+POST    /inbound/delete-domain.json
+POST    /inbound/routes.json
+POST    /inbound/add-route.json
+POST    /inbound/update-route.json
+POST    /inbound/delete-route.json
+POST    /inbound/send-raw.json
+
+POST    /exports/info.json
+POST    /exports/list.json
+POST    /exports/rejecs.json
+POST    /exports/whitelist.json
+POST    /exports/activity.json
+
+POST    /ips/list.json
+POST    /ips/info.json
+POST    /ips/provision.json
+POST    /ips/start-warmup.json
+POST    /ips/cancel-warmup.json
+POST    /ips/set-pool.json
+POST    /ips/delete.json
+POST    /ips/list-pools.json
+POST    /ips/pool-info.json
+POST    /ips/create-pool.json
+POST    /ips/delete-pool.json
+POST    /ips/check-custom-dns.json
+POST    /ips/set-custom-dns.json
+
+POST    /metadata/list.json
+POST    /metadata/add.json
+POST    /metadata/update.json
+POST    /metadata/delete.json
