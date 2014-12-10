@@ -1,0 +1,73 @@
+# Nexmo uses the last segment of the URI on several endpoints to define the
+# data encoding format (json/xml). In this file, a route for each encoding is
+# defined separately. See separate file nexmo-formats-combined.txt for an
+# alternative using variables for the format part of the URI.
+
+GET     /sms/json
+POST    /sms/json
+GET     /sms/xml
+POST    /sms/xml
+
+GET     /sc/us/2fa/json
+POST    /sc/us/2fa/json
+GET     /sc/us/2fa/xml
+POST    /sc/us/2fa/xml
+GET     /sc/us/alert/json
+POST    /sc/us/alert/json
+GET     /sc/us/alert/xml
+POST    /sc/us/alert/xml
+GET     /sc/us/marketing/json
+POST    /sc/us/marketing/json
+GET     /sc/us/marketing/xml
+POST    /sc/us/marketing/xml
+
+GET     /call/json
+POST    /call/json
+GET     /call/xml
+POST    /call/xml
+
+GET     /tts/json
+POST    /tts/json
+GET     /tts/xml
+POST    /tts/xml
+
+GET     /tts-prompt/json
+POST    /tts-prompt/json
+GET     /tts-prompt/xml
+POST    /tts-prompt/xml
+
+GET     /ni/json
+GET     /ni/xml
+
+GET     /verify/json
+GET     /verify/xml
+GET     /verify/check/json
+GET     /verify/check/xml
+GET     /verify/search/json
+GET     /verify/search/xml
+
+GET     /account/get-balance/{api_key}/{api_secret}
+GET     /account/get-balance
+GET     /account/get-pricing/outbound/{api_key}/{api_secret}/{country}
+GET     /account/get-pricing/outbound
+POST    /account/settings/{api_key}/{api_secret}
+GET     /account/top-up/{api_key}/{api_secret}/{trx}
+GET     /account/top-up
+GET     /account/numbers/{api_key}/{api_secret}
+GET     /account/numbers
+
+GET     /number/search/{api_key}/{api_secret}/{country}
+GET     /number/search
+POST    /number/buy/{api_key}/{api_secret}/{country}/{msisdn}
+POST    /number/buy
+POST    /number/cancel/{api_key}/{api_secret}/{country}/{msisdn}
+POST    /number/cancel
+POST    /number/update/{api_key}/{api_secret}/{country}/{msisdn}
+POST    /number/update
+
+GET     /search/message/{api_key}/{api_secret}/{id}
+GET     /search/message
+GET     /search/messages/{api_key}/{api_secret}
+GET     /search/messages
+GET     /search/rejections/{api_key}/{api_secret}
+GET     /search/rejections

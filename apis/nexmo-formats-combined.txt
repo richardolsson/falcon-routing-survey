@@ -1,0 +1,55 @@
+# Nexmo uses the last segment of the URL on several endpoints to define the
+# data encoding format (json/xml). In this file, these segments are defined as
+# a variable, so that both formats result in the same responder. See separate
+# file nexmo-formats-separate.txt for alternative.
+
+GET     /sms/{format}
+POST    /sms/{format}
+
+GET     /sc/us/2fa/{format}
+POST    /sc/us/2fa/{format}
+GET     /sc/us/alert/{format}
+POST    /sc/us/alert/{format}
+GET     /sc/us/marketing/{format}
+POST    /sc/us/marketing/{format}
+
+GET     /call/{format}
+POST    /call/{format}
+
+GET     /tts/{format}
+POST    /tts/{format}
+
+GET     /tts-prompt/{format}
+POST    /tts-prompt/{format}
+
+GET     /ni/{format}
+
+GET     /verify/{format}
+GET     /verify/check/{format}
+GET     /verify/search/{format}
+
+GET     /account/get-balance/{api_key}/{api_secret}
+GET     /account/get-balance
+GET     /account/get-pricing/outbound/{api_key}/{api_secret}/{country}
+GET     /account/get-pricing/outbound
+POST    /account/settings/{api_key}/{api_secret}
+GET     /account/top-up/{api_key}/{api_secret}/{trx}
+GET     /account/top-up
+GET     /account/numbers/{api_key}/{api_secret}
+GET     /account/numbers
+
+GET     /number/search/{api_key}/{api_secret}/{country}
+GET     /number/search
+POST    /number/buy/{api_key}/{api_secret}/{country}/{msisdn}
+POST    /number/buy
+POST    /number/cancel/{api_key}/{api_secret}/{country}/{msisdn}
+POST    /number/cancel
+POST    /number/update/{api_key}/{api_secret}/{country}/{msisdn}
+POST    /number/update
+
+GET     /search/message/{api_key}/{api_secret}/{id}
+GET     /search/message
+GET     /search/messages/{api_key}/{api_secret}
+GET     /search/messages
+GET     /search/rejections/{api_key}/{api_secret}
+GET     /search/rejections

@@ -31,6 +31,7 @@ endpoint lists are available in the _apis_ folder.
 * MailGun
 * Mandrill
 * Twilio
+* Nexmo (two variants, see comments in .txt files)
 * (more coming...)
 
 Routing strategies
