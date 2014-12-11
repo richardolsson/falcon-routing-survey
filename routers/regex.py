@@ -1,14 +1,20 @@
 import re
 
+class Route(object):
+    def __init__(self, exp, responder):
+        self.expression = exp
+        self.responder = responder
+
+
 class RegexRouter(object):
     def __init__(self):
         self._routes = []
 
     def find_responder(self, url):
         for route in self._routes:
-            exp = route[0]
-            if exp.search(url):
-                return route[1]
+            match = route.expression.search(url)
+            if match:
+                return route.responder, match.groupdict()
 
     def add_route(self, pattern, responder):
         segments = pattern.lstrip('/').split('/')
@@ -24,5 +30,6 @@ class RegexRouter(object):
         re_pattern = '^/%s$' % '/'.join(re_segments)
         exp = re.compile(re_pattern)
 
-        self._routes.append((exp, responder))
+        route = Route(exp, responder)
+        self._routes.append(route)
 

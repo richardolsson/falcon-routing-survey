@@ -101,13 +101,13 @@ def main():
             root.print_debug()
 
         measure_router('tree_router', url_to_find, n=iterations)
-        print('RETURN: %s' % tree_router.find_responder(url_to_find))
+        print('RETURN: %s' % str(tree_router.find_responder(url_to_find)))
 
         measure_router('regex_router', url_to_find, n=iterations)
-        print('RETURN: %s' % regex_router.find_responder(url_to_find))
+        print('RETURN: %s' % str(regex_router.find_responder(url_to_find)))
 
         measure_router('compiled_router', url_to_find, n=iterations)
-        print('RETURN: %s' % compiled_router.find_responder(url_to_find))
+        print('RETURN: %s' % str(compiled_router.find_responder(url_to_find)))
 
 
 if __name__ == '__main__':

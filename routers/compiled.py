@@ -15,7 +15,9 @@ class CompiledTreeRouter(tree.TreeRouter):
         if path[0]=='':
             path = path[1:]
 
-        return self._find(path, self._responders)
+        params = {}
+        responder = self._find(path, self._responders, params)
+        return responder, params
 
     def _compile_node(self, node=None, level=0):
         pad = '  ' + level * '  '
@@ -23,6 +25,7 @@ class CompiledTreeRouter(tree.TreeRouter):
         if node.is_var:
             # TODO: Collapse this somehow?
             self._code_lines.append(pad + 'if path_len > %d:' % level)
+            self._code_lines.append(pad + '  params["%s"] = path[%d]' % (node.var_name, level))
         else:
             cond_src = 'if path_len > %d and path[%d] == "%s":' % (level, level, node.segment)
             self._code_lines.append(pad + cond_src)
@@ -43,7 +46,7 @@ class CompiledTreeRouter(tree.TreeRouter):
     def _compile(self):
         self._responders = []
         self._code_lines = [
-            'def find(path, responders):',
+            'def find(path, responders, params):',
             '  path_len = len(path)',
         ]
 

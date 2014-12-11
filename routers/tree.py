@@ -7,6 +7,7 @@ class RouteNode(object):
         self.is_var = False
         if segment[0] == '{' and segment[-1] == '}':
             self.is_var = True
+            self.var_name = segment[1:-1]
 
     def traverse(self, segments, index=0, seg_count=None):
         if seg_count is None:
@@ -71,6 +72,8 @@ class TreeRouter(object):
         child_lists[0] = self._roots
         depth = 0
 
+        params = {}
+
         while depth < seg_count:
             children = child_lists[depth]
             child_index = child_indices[depth]
@@ -88,11 +91,15 @@ class TreeRouter(object):
                 if child.matches(path[depth]):
                     child_lists[depth+1] = child._children
                     child_indices[depth] = child_index + 1
+
+                    if child.is_var:
+                        params[child.var_name] = path[depth]
+
                     depth += 1
 
                     if depth == seg_count:
                         # Found leaf!
-                        return child.responder
+                        return child.responder, params
                     else:
                         going_deeper = True
                         # Get back to outer loop, which will
