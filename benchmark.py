@@ -28,7 +28,7 @@ def res_factory(url, methods):
 
 def setup_router(endpoints, cls):
     router = cls()
-    for template, methods in endpoints.iteritems():
+    for template, methods in endpoints.items():
         resource = res_factory(template, methods)
         router.add_route(template, resource)
 

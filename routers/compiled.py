@@ -1,4 +1,4 @@
-import tree
+from . import tree
 
 class CompiledTreeRouter(tree.TreeRouter):
     def __init__(self):
@@ -57,6 +57,6 @@ class CompiledTreeRouter(tree.TreeRouter):
 
         print(src)
         ns = {}
-        exec compile(src, '<string>', 'exec') in ns
+        exec(compile(src, '<string>', 'exec'), ns)
         self._find = ns['find']
 
