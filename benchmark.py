@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-import re
 import sys
+import codecs
 import timeit
 
 from routers import TreeRouter, RegexRouter, CompiledTreeRouter
@@ -67,8 +67,7 @@ def main():
     if len(sys.argv)>3:
         iterations = int(sys.argv[3])
 
-    with open(file_name, 'r') as f:
-        ws = re.compile('\s*')
+    with codecs.open(file_name, 'r', 'utf8') as f:
         endpoint_methods = {}
         num_endpoints = 0
         num_methods = 0
@@ -77,7 +76,7 @@ def main():
                 # Skip comments
                 continue
 
-            fields = ws.split(line)
+            fields = line.split()
             if len(fields) and len(fields[0]):
                 method, endpoint = fields[0:2]
 

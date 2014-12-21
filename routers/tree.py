@@ -129,11 +129,9 @@ class TreeRouter(object):
         return None, None
 
     def _parse(self, pattern):
-        # Naive
+        # Remove any leading slash, and surrounding white space
+        pattern = pattern.strip().lstrip('/')
         path = pattern.split('/')
-
-        if path[0] == '':
-            path = path[1:]
 
         # This node has already been created?
         ancestor, parent = self._find_leaf_from_path(path)
