@@ -35,7 +35,7 @@ endpoint lists are available in the _apis_ folder.
 * Spotify
 * PayPal
 * Stripe
-* (more coming...)
+* "TinyAPI" (dummy for benchmarking extremely simple schemes)
 
 Routing strategies
 ------------------

@@ -1,0 +1,10 @@
+# This is a mock-up of a tiny API with just a few endpoints used for
+# benchmarking simpler use cases.
+
+GET     /authors
+POST    /authors
+GET     /authors/{id}
+GET     /authors/{id}/books
+GET     /books
+POST    /books
+GET     /books/{id}
