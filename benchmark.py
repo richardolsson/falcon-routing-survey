@@ -19,8 +19,8 @@ def res_factory(url, methods):
         pass
 
     res = Resource()
-    for method in methods:
-        method_name = 'on_' + method.lower()
+    for http_method in methods:
+        method_name = 'on_' + http_method.lower()
         setattr(res, method_name, method)
 
     return res
