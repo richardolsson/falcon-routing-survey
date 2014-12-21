@@ -1,13 +1,38 @@
+import re
 
 class RouteNode(object):
     def __init__(self, segment, responder=None):
         self._children = []
-        self.segment = segment
         self.responder = responder
-        self.is_var = False
-        if segment[0] == '{' and segment[-1] == '}':
+
+        # Create regex for any variables
+        seg = segment.replace('.', '\\.')
+        variables = list(re.finditer('{([-_a-zA-Z0-9]*)}', seg))
+
+        if variables:
             self.is_var = True
-            self.var_name = segment[1:-1]
+            if len(variables) == 1 and variables[0].span() == (0,len(seg)):
+                self.is_complex = False
+                self.var_name = segment[1:-1]
+            else:
+                self.is_complex = True
+                seg_fields = []
+                prev_end_idx = 0
+                for mo in variables:
+                    var_span = mo.span()
+                    var_start_idx = var_span[0]
+                    seg_fields.append(seg[prev_end_idx:var_start_idx])
+                    seg_name = mo.groups()[0]
+                    seg_name = seg_name.replace('-', '_')
+                    seg_fields.append('(?P<%s>[^/]*)' % seg_name)
+                    prev_end_idx = var_span[1]
+            
+                seg_fields.append(seg[prev_end_idx:])
+                seg_pattern = ''.join(seg_fields)
+                self.var_regex = re.compile(seg_pattern)
+        else:
+            self.segment = segment
+            self.is_var = False
 
     def traverse(self, segments, index=0, seg_count=None):
         if seg_count is None:
@@ -35,7 +60,17 @@ class RouteNode(object):
 
 
     def matches(self, s):
-        if self.is_var or s == self.segment:
+        if self.is_var:
+            if self.is_complex:
+                match = self.var_regex.search(s)
+                if match:
+                    self.variables = match.groupdict()
+                    return True
+            else:
+                self.variables = { self.var_name: s }
+                return True
+                
+        elif s == self.segment:
             return True
         else:
             return False
@@ -47,7 +82,15 @@ class RouteNode(object):
         return str(self)
 
     def __str__(self):
-        return 'RouteNode(%s, %s)' % (self.segment, str(self.responder))
+        if self.is_var:
+            if self.is_complex:
+                s = 'complex(%s)' % self.var_regex.pattern
+            else:
+                s = 'var(%s)' % self.var_name
+        else:
+            s = 'literal(%s)' % self.segment
+
+        return 'RouteNode(%s, %s)' % (s, str(self.responder))
 
 
 class TreeRouter(object):
@@ -93,7 +136,7 @@ class TreeRouter(object):
                     child_indices[depth] = child_index + 1
 
                     if child.is_var:
-                        params[child.var_name] = path[depth]
+                        params.update(child.variables)
 
                     depth += 1
 

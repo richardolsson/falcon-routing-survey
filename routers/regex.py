@@ -20,10 +20,23 @@ class RegexRouter(object):
         segments = pattern.lstrip('/').split('/')
         re_segments = []
         for seg in segments:
-            if len(seg) and seg[0] == '{' and seg[-1] == '}':
-                seg_name = seg[1:-1]
-                seg_name = seg_name.replace('-', '_')
-                seg = '(?P<%s>[^/]*)' % seg_name
+            if len(seg) > 0:
+                seg = seg.replace('.', '\\.')
+                variables = re.finditer('{([-_a-zA-Z0-9]*)}', seg)
+                seg_fields = []
+                prev_end_idx = 0
+                for mo in variables:
+                    var_span = mo.span()
+                    var_start_idx = var_span[0]
+                    seg_fields.append(seg[prev_end_idx:var_start_idx])
+                    seg_name = mo.groups()[0]
+                    seg_name = seg_name.replace('-', '_')
+                    seg_fields.append('(?P<%s>[^/]*)' % seg_name)
+                    prev_end_idx = var_span[1]
+
+                seg_fields.append(seg[prev_end_idx:])
+                seg = ''.join(seg_fields)
+
 
             re_segments.append(seg)
 
